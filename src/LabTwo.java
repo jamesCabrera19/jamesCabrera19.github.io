@@ -55,20 +55,21 @@ public class LabTwo {
 	    return t;
 	}
 	public static void main(String[] args) {
-		Triangle t = new Triangle(3,5,9);
 		
-		Triangle t2 = getUsrInput();
+		Triangle t = getUsrInput();
 		
 		
-		System.out.println(t2 + " color= " +t2.getColor() +" is filled: "+ t2.getFilled());
+		System.out.println(t + " color= " +t.getColor() +" is filled: "+ t.getFilled());
 	}
 }
 
 
 class GeometricObject{
+	// data fields
 	private  String color;
 	private boolean filled;
 	
+	// constructors
 	public GeometricObject() {
 		this.color = "";
 		this.filled = false;
@@ -78,6 +79,7 @@ class GeometricObject{
 		this.filled = filled;
 	}
 	
+	// set and get methods
 	public String getColor() {
 		return color;
 	}
@@ -94,22 +96,25 @@ class GeometricObject{
 }
 
 class Triangle extends GeometricObject{
+	// data fields
 	private double side1;
 	private double side2; 
 	private double side3; 
 	
-	
+	// constructors
 	public Triangle() {
 		this.side1 = 1.0;
 		this.side2 = 1.0;
 		this.side3 = 1.0;
 	}
+	
 	public Triangle(double side1, double side2, double side3) {
 		this.side1 = side1;
 		this.side2 = side2;
 		this.side3 = side3;
 	}
 	
+	// get and set methods
 	public double getSideOne() {
 		return side1;
 	}
@@ -128,7 +133,7 @@ class Triangle extends GeometricObject{
 	public void setSideThree(double side) {
 		this.side3 = side;
 	}
-	
+	// other methods
 	public double getArea() {
 		return 0.5 * side1 * side2;
 	}

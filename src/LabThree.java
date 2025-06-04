@@ -18,10 +18,12 @@ public class LabThree {
 
 class Testing{
 	public static String checkBinary(String binaryString) {
+		
+		// loop to check for 0s and 1s in the string 
 		for(int i = 0; i < binaryString.length(); i++ ) {
 			char c = binaryString.charAt(i);
 			if(c != '0' && c != '1' ) {
-				// System.out.println(c);
+//				 System.out.println("Invalid char: " + c);
 	            throw new NumberFormatException("INVALID BINARY STRING: " + binaryString);
 			}
 		}
@@ -37,11 +39,11 @@ class Testing{
 	}
 	public static void main(String[] args) {
 		
-		try {
-	        bin2Dec("1010101v101010101");  // invalid
-	        bin2Dec("1011");               // valid
-	    } catch (NumberFormatException e) {
-	        System.out.println("Error: " + e.getMessage());
-	    }
+		 try {
+//		        bin2Dec("1010101v101010101");  // invalid
+		        bin2Dec("1011");               // valid
+		    } catch (NumberFormatException e) {
+		        System.out.println("Error: " + e.getMessage());
+		    }
 	}
 }
