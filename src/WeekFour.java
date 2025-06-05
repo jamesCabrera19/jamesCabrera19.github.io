@@ -1,4 +1,4 @@
-package one;
+
 //Your Name: 
 //Programming Exercise Listing 13.7 Interfaces
 //(13.5 Interfaces in textbook page 510) Please following the Demo Video for Concept of Interface in the blackboard week 4, 
@@ -18,8 +18,60 @@ package one;
 public class WeekFour {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Object tiger = new Tiger();
+		Object chicken = new Chicken();
+		Object apple = new Apple();
+		Object watermelon = new Watermelon();
+		Object fish = new Fish();
 
+
+		Object[] objects = new Object[] { tiger, chicken, apple,watermelon, fish };
+		
+		for(int i = 0; i < objects.length; i++) {
+			if(objects[i] instanceof EdibleWeekFour) {
+				EdibleWeekFour edible = (EdibleWeekFour) objects[i]; // cast to Edible
+				System.out.println(edible.howToEat());
+			}
+		}
 	}
 
+}
+class Animal{}
+
+class Fish extends Animal implements EdibleWeekFour{
+	public String howToEat() {
+		return "Fish: make soup";
+	}
+}
+
+class Chicken extends Animal implements EdibleWeekFour{
+	public String howToEat() {
+		return "Chicken: fry it";
+	}
+}
+
+class Tiger extends Animal{
+	
+}
+
+abstract class Fruit implements EdibleWeekFour{ 
+	// abstract means that it doesn't really need to implement the interface
+	
+}
+
+class Watermelon extends Fruit{
+	public String howToEat() {
+		return "Watermelon: make slices";
+	}
+}
+class Apple extends Fruit{
+	public String howToEat() {
+		return "Apple: make apple juice";
+	}
+}
+
+class Orange extends Fruit{
+	public String howToEat() {
+		return "Orange: make orange juice";
+	}	
 }

@@ -1,8 +1,5 @@
-package one;
 
-public interface Edible {
-
+public interface EdibleWeekFour {
 	public abstract String howToEat(); // method - returns string?
-	
-	
+
 }

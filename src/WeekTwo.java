@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class PersonTest {
+public class WeekTwo {
 
     public static void getPerson() {
         System.out.println("=== PERSON INFO ===");

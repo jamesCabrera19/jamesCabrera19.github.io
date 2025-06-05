@@ -1,5 +1,3 @@
-package one;
-
 import java.util.Scanner;
 
 public class WeekThree {
@@ -8,7 +6,7 @@ public class WeekThree {
         return x + y;
     }
 
-    public static int getInput(Scanner usrInput) {
+    public static int getInput(Scanner usrInput ) {
         // Array to store numbers
         int[] numbers = new int[2];
 
@@ -22,7 +20,7 @@ public class WeekThree {
                 i++;
             } else {
                 System.out.println("The number entered was not an int, try again.");
-                usrInput.next(); // consume next token
+                usrInput.next(); 
             }
         }
 
@@ -34,7 +32,9 @@ public class WeekThree {
     public static void main(String[] args) {
         Scanner usrInput = new Scanner(System.in);
 
-        System.out.println(getInput(usrInput));
+        int result = getInput(usrInput);
+        
+        System.out.println(result);
 
         usrInput.close();
     }

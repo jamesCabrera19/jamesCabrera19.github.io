@@ -1,16 +1,16 @@
 
 public class Person {
-
+	// data fields
 	private String name;
 	private String address;
 	private int phoneNumber;
 	private String email;
 	
 	
+	// get and set methods
 	public String getName() {
 		return name;
 	}
-	
 	public String getAddress() {
 		return address;
 	}
@@ -35,13 +35,14 @@ public class Person {
 	}
 	
 	
-	
+	// no arg constructor
 	public Person() {
 		this.name = "";
 		this.address = "";
 		this.phoneNumber = 0;
 		this.email= "";
 	}
+	// constructor
 	public Person(String name, String address,int phoneNumber, String email ) {
 		this.name = name;
 	    this.address = address;
@@ -49,7 +50,7 @@ public class Person {
 	    this.email = email;
 		
 	}
-	
+	// to string method
 	@Override
 	public String toString() {
 	    return "Class: Person, Name: " + getName();

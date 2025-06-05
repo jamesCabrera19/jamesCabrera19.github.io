@@ -1,11 +1,9 @@
-package one;
 import java.util.Scanner;
-
 
 public class LabTwo {
 
-	public static Triangle getUsrInput() {
-	    Scanner usrInput = new Scanner(System.in);
+	 
+	public static Triangle getUsrInput(Scanner usrInput ) {
 
 	    // array to store numbers from user
 	    int[] sides = new int[3];
@@ -51,19 +49,20 @@ public class LabTwo {
 	        t.setFilled(false);
 	    }
 
-	    usrInput.close();
 	    return t;
 	}
+	
 	public static void main(String[] args) {
+	    Scanner usrInput = new Scanner(System.in);
+
+		Triangle t = getUsrInput( usrInput );
 		
-		Triangle t = getUsrInput();
-		
-		
-		System.out.println(t + " color= " +t.getColor() +" is filled: "+ t.getFilled());
+		System.out.println(t + " color: " +t.getColor() +" is filled: "+ t.getFilled());
+	    usrInput.close();
+
 	}
+	
 }
-
-
 class GeometricObject{
 	// data fields
 	private  String color;
