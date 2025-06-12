@@ -83,16 +83,18 @@ public class Project {
 		if (unknownCity.containsKey("city")) {
 		    System.out.println("City found: " + unknownCity.get("city"));
 		  
-			String cit = unknownCity.get("city");
-			int zipCode = 123;
-			double temperature= 80;
-			int humidity = 90;
-			String condition = "humid";
-			double feelsLike = 90;
+			String cit = (String) unknownCity.get("city");
+			int zipCode = (int) unknownCity.get("zipCode");
+			
+			double temperature= (double) unknownCity.get("temperature");
+			int humidity = (int) unknownCity.get("humidity");
+			String condition = (String) unknownCity.get("condition");
+			double feelsLike = (double) unknownCity.get("feelsLike");
 			LocalDateTime timeUpdated = LocalDateTime.now();
+			
 			Weather w = new Weather(city,zipCode, temperature, humidity,condition,feelsLike,timeUpdated);
 			
-
+			System.out.println(w.toString());
 		    
 
 		} else {
