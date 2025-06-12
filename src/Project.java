@@ -2,16 +2,131 @@
 package one;
 
 import java.time.LocalDateTime;
-
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
+import java.util.Arrays;
 
 public class Project {
 
+	public static Map getCity(String city) {
+		Map<String, Object> mexico = new HashMap<>();
+        mexico.put("city", "Mexico City");
+        mexico.put("zipCode", 10000);
+        mexico.put("temperature", 82.4);
+        mexico.put("humidity", 65);
+        mexico.put("condition", "Sunny");
+        mexico.put("feelsLike", 84.2);
+        mexico.put("timeUpdated", LocalDateTime.now());
+
+        Map<String, Object> greenland = new HashMap<>();
+        greenland.put("city", "Nuuk");
+        greenland.put("zipCode", 3900);
+        greenland.put("temperature", 34.6);
+        greenland.put("humidity", 80);
+        greenland.put("condition", "Snow");
+        greenland.put("feelsLike", 28.7);
+        greenland.put("timeUpdated", LocalDateTime.now());
+
+        Map<String, Object> usa = new HashMap<>();
+        usa.put("city", "New York");
+        usa.put("zipCode", 10001);
+        usa.put("temperature", 78.9);
+        usa.put("humidity", 70);
+        usa.put("condition", "Cloudy");
+        usa.put("feelsLike", 80.1);
+        usa.put("timeUpdated", LocalDateTime.now());
+
+        Map<String, Object> spain = new HashMap<>();
+        spain.put("city", "Madrid");
+        spain.put("zipCode", 28001);
+        spain.put("temperature", 91.0);
+        spain.put("humidity", 40);
+        spain.put("condition", "Clear");
+        spain.put("feelsLike", 93.2);
+        spain.put("timeUpdated", LocalDateTime.now());
+
+        Map<String, Object> tokyo = new HashMap<>();
+        tokyo.put("city", "Tokyo");
+        tokyo.put("zipCode", 1000001);
+        tokyo.put("temperature", 88.8);
+        tokyo.put("humidity", 75);
+        tokyo.put("condition", "Rain");
+        tokyo.put("feelsLike", 90.0);
+        tokyo.put("timeUpdated", LocalDateTime.now());
+
+        
+        List<Map<String, Object>> cities = Arrays.asList(mexico, greenland, usa, spain, tokyo);
+
+        Map <String, Object> output = new HashMap<>();
+        
+        for (Map<String, Object> cityMap : cities) {
+            if (((String) cityMap.get("city")).equalsIgnoreCase(city)) {
+                output = cityMap;
+                break;
+            }
+        }
+       
+		return output;
+	}
+	// city, or zipCode.
+	
+	
+	public static void getWeatherByCity(Scanner usrInput) {
+		
+		System.out.println("enter a city: ");
+		String city = usrInput.nextLine();
+		Map<String, Object> unknownCity = getCity(city);
+
+		
+		if (unknownCity.containsKey("city")) {
+		    System.out.println("City found: " + unknownCity.get("city"));
+		  
+			String cit = unknownCity.get("city");
+			int zipCode = 123;
+			double temperature= 80;
+			int humidity = 90;
+			String condition = "humid";
+			double feelsLike = 90;
+			LocalDateTime timeUpdated = LocalDateTime.now();
+			Weather w = new Weather(city,zipCode, temperature, humidity,condition,feelsLike,timeUpdated);
+			
+
+		    
+
+		} else {
+		    System.out.println("City not found.");
+		}
+		
+		
+		
+		
+	}
 	public static void main(String[] args) {
+		Scanner usrInput = new Scanner(System.in);
+		
+
+		
+//		String city = "mex";
+//		int zipCode = 123;
+//		double temperature= 80;
+//		int humidity = 90;
+//		String condition = "humid";
+//		double feelsLike = 90;
+//		LocalDateTime timeUpdated = LocalDateTime.now();
+//		Weather w = new Weather(city,zipCode, temperature, humidity,condition,feelsLike,timeUpdated);
+//		
+//		System.out.println(w);
+		
+		getWeatherByCity(usrInput);
+		
+		usrInput.close();
 		
 	}
 }
 
-class City{
+class Weather{
 	private String city;
 	private int zipCode;
 	private double temperature;
@@ -80,7 +195,7 @@ class City{
 	
 	
 	
-	public City() {
+	public Weather() {
 		city = "";
 		zipCode = 0;
 		temperature= 0;
@@ -90,7 +205,7 @@ class City{
 		timeUpdated = LocalDateTime.now();
 	}
 	
-	public City(String city, int zipCode, double temperature,int humidity,String condition,double feelsLike,LocalDateTime timeUpdated) {
+	public Weather(String city, int zipCode, double temperature,int humidity,String condition,double feelsLike,LocalDateTime timeUpdated) {
 		this.city = city;
 		this.zipCode = zipCode;
 		this.temperature= temperature;
