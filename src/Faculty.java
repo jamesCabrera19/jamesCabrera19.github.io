@@ -1,3 +1,11 @@
+/**
+ * Objective: 
+ * Algorithm: Programming Exercise - week 2
+ *Input and Output: Create a Faculty subclass of Employee
+ * Created by: Jaime Cabrera
+ * Date: June 11, 2025
+ * Version: 1
+ */
 
 public class Faculty extends Employee {
 
@@ -6,16 +14,22 @@ public class Faculty extends Employee {
 	private String rank;
 
 	// set and get methods	
+	
+	// returns office hours string
 	public String getOfficeHours() {
 		return officeHours;
 	}
+	// returns rank string
 	public String getRank() {
 		return rank;
 	}
-	//
+	
+	// set methods
+	// sets office hours
 	public void setOfficeHours(String officeHours) {
 		this.officeHours = officeHours;
 	}
+	// sets rank
 	public void setRank(String rank) {
 		this.rank = rank;
 	}

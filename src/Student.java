@@ -1,8 +1,15 @@
+/**
+ * Objective: 
+ * Algorithm: Programming Exercise - week 2
+ *Input and Output: Create a Student subclass of Person
+ * Created by: Jaime Cabrera
+ * Date: June 11, 2025
+ * Version: 1
+ */
 
 public class Student extends Person {
 
-
-	// data fields
+	// CONSTANT data fields
 	public static final String FRESHMAN = "Freshman";
 	public static final String SPHOMORE = "Sophomore";
 	public static final String JUNIOR = "Junior";

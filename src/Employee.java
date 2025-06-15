@@ -1,3 +1,12 @@
+/**
+ * Objective: 
+ * Algorithm: Programming Exercise - week 2
+ *Input and Output: Create a Employee subclass of Person
+ * Created by: Jaime Cabrera
+ * Date: June 11, 2025
+ * Version: 1
+ */
+
 
 public class Employee extends Person{
 
@@ -11,25 +20,27 @@ public class Employee extends Person{
 	public String getOffice() {
 		return office;
 	}
-	
+	// returns salary
 	public double getSalary() {
 		return salary;
 	}
-	//
+	// returns date hired
 	public String getDateHired() {
 		return dateHired;
 	}
+	// set methods
 	public void setOffice(String office) {
 		this.office = office;
 	}
+	// sets the salary
 	public void setSalary(double salary) {
 		this.salary = salary;	
 	}
 	
 	// no arg constructor
 	public Employee() {
-		this.office = "";
-		this.salary = 0.0;
+		this.office = ""; // empty string data field
+		this.salary = 0.0; // 0 salary
 		this.dateHired = "6/10/2020";
 	}
 	// arg constructor
