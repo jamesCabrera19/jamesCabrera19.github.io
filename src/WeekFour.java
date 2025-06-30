@@ -1,76 +1,106 @@
 
-//Your Name: 
-//Programming Exercise Listing 13.7 Interfaces
-//(13.5 Interfaces in textbook page 510) Please following the Demo Video for Concept of Interface in the blackboard week 4, 
-// and the Listing 13.7 TestEdible .java program in the textbook page 510 to create the same class 
-// and interface, and at the same time, add two of your own classes, such as Fish class and Watermelon Class
-//
-//You may use IntelliJ IDEA or Eclipse or any IDE to develop your code. Create your project and debug and test run the program correctly. You need to include documentation in the code to get the full points. Submit a screenshot to show the code and running output, as well as your program java file (100 points). 
-//
-///**
-// * Objective: 
-// * Algorithm: Description how to resolve the problem.
-// *Input and Output:
-// * Created by: 
-// * Date:
-// * Version:
+// **
+// * Objective: more practice with class
+// * Algorithm: method casting
+// * Input and Output: objects, returns methods. 
+// * Created by: Jaime Cabrera
+// * Date: June 24, 2025
+// * Version: 1.0
 // */
+
 public class WeekFour {
 
 	public static void main(String[] args) {
+		// creating different Objects. these objects implement method called howToEat()
 		Object tiger = new Tiger();
 		Object chicken = new Chicken();
+		Object fish = new Fish();
+		// more objects
 		Object apple = new Apple();
 		Object watermelon = new Watermelon();
-		Object fish = new Fish();
 
 
+		// array of objects.
 		Object[] objects = new Object[] { tiger, chicken, apple,watermelon, fish };
 		
+		// loop to call the objects method - howToEat()
 		for(int i = 0; i < objects.length; i++) {
+			
+			// checking if Object has the method howToEat()
 			if(objects[i] instanceof EdibleWeekFour) {
-				EdibleWeekFour edible = (EdibleWeekFour) objects[i]; // cast to Edible
+				// empty space for readability
+				System.out.println();
+				// casting the method to call it
+				EdibleWeekFour edible = (EdibleWeekFour) objects[i]; // casting to call the methods
+
+				// calling the method
 				System.out.println(edible.howToEat());
+				
+			}else if(objects[i] instanceof MeatEater) {
+				
+				// casting the method 
+				MeatEater carnivore = (MeatEater) objects[i];
+				
+				// calling the method
+				System.out.println(carnivore.eatChicken());
 			}
 		}
-	}
+		return;
 
+	}
 }
+
+// Animal class
 class Animal{}
 
+// creating a Fish object
 class Fish extends Animal implements EdibleWeekFour{
+	// simple method that describes how to eat the object - returns a string
 	public String howToEat() {
 		return "Fish: make soup";
 	}
 }
 
+// creating Chicken object
 class Chicken extends Animal implements EdibleWeekFour{
+	// simple method that describes how to eat the object - returns a string
 	public String howToEat() {
 		return "Chicken: fry it";
 	}
 }
-
-class Tiger extends Animal{
-	
+// creating a Tiger object - tiger does not implements Edible Interface
+class Tiger extends Animal implements MeatEater{
+	// method that returns a string
+	public String eatChicken() {
+		return "Tiger: Eats chicken";
+	}
 }
 
+
+// creating an abstract Fruit object that doesnt need to implement the interface
 abstract class Fruit implements EdibleWeekFour{ 
 	// abstract means that it doesn't really need to implement the interface
 	
 }
 
+// creating a fruit Object
 class Watermelon extends Fruit{
+	// simple method that describes how to eat the object - returns a string
 	public String howToEat() {
 		return "Watermelon: make slices";
 	}
 }
+
+//creating a fruit Object
 class Apple extends Fruit{
+	// simple method that describes how to eat the object - returns a string
 	public String howToEat() {
 		return "Apple: make apple juice";
 	}
 }
-
+//creating a fruit Object
 class Orange extends Fruit{
+	// simple method that describes how to eat the object - returns a string
 	public String howToEat() {
 		return "Orange: make orange juice";
 	}	
