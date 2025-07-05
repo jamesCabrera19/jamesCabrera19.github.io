@@ -31,9 +31,3 @@ Welcome to my Java repository! This project contains all the Java homework assig
 - JavaFX (for some GUI-based programs)
 
 ---
-
-## 🚀 How to Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/jamesCabrera19/ProgrammingTwo.git
