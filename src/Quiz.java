@@ -1,11 +1,18 @@
 import java.util.Arrays;
 
+
 public class Quiz {
-
-	public static void main(String[] args) {
-	SquareQuiz s = new SquareQuiz("calc");
+//	public String name;
+//	
+//	public Quiz() {
+//		this.name = "margie";
+//	}
+	 public static void main(String[] args) {
+		 
+	 }
 	
-	System.out.println(s);
-	}
+}
 
+class Margarine extends Quiz{
+	
 }
