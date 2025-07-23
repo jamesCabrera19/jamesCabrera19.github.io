@@ -8,7 +8,7 @@ public class Module7 {
 		Random random = new Random();
 		int[] numbers  = new int[size];
 		
-		for(int i =0; i < size;i++) {
+		for(int i =0 ; i < size;i++) {
 			numbers[i] =  random.nextInt(1,100);
 		}
 		
